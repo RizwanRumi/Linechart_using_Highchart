@@ -1,0 +1,39 @@
+﻿@model DotNet.Highcharts.Highcharts
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Upload CSV Of Cooling Data</h1>
+     </div>
+</div>
+
+<hr />
+
+<div class="container">
+   @using (Html.BeginForm("UploadFile", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+
+    <div>
+        @Html.TextBox("file_Uploader", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Upload" />
+
+        @ViewBag.Message
+
+    </div>
+
+
+}  
+</div>
+
+<hr />
+<div class="container">
+   
+     @(Model)
+
+
+</div>
